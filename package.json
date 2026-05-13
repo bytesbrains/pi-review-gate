@@ -1,0 +1,44 @@
+{
+  "name": "pi-review-gate",
+  "version": "1.0.0",
+  "description": "CI-level merge guardian for AI agents — required reviewers, breaking change detection, stale PR cleanup, and review automation.",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "governance",
+    "ci",
+    "code-review",
+    "merge-gate",
+    "breaking-changes"
+  ],
+  "author": "nandal <nandal@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nandal/pi-ext",
+    "directory": "review-gate"
+  },
+  "homepage": "https://github.com/nandal/pi-ext/tree/main/review-gate",
+  "bugs": {
+    "url": "https://github.com/nandal/pi-ext/issues"
+  },
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  }
+}
