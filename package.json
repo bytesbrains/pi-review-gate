@@ -1,7 +1,7 @@
 {
   "name": "pi-review-gate",
-  "version": "1.0.0",
-  "description": "CI-level merge guardian for AI agents — required reviewers, breaking change detection, stale PR cleanup, and review automation.",
+  "version": "1.1.0",
+  "description": "CI-level merge guardian for AI agents \u2014 required reviewers, breaking change detection, stale PR cleanup, and review automation.",
   "keywords": [
     "pi-package",
     "pi-extension",
