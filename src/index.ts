@@ -6,7 +6,8 @@
  */
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import { interceptToolCall } from "./intercepts";
-import { checkTool, approveTool, requestTool, statusTool, closeStaleTool } from "./tools/review";
+import { checkTool } from "./tools/check";
+import { approveTool, requestTool, statusTool, closeStaleTool } from "./tools/review";
 
 export default function (pi: ExtensionAPI) {
   pi.on("tool_call", interceptToolCall);
