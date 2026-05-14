@@ -24,7 +24,7 @@ export function loadConfig(cwd: string): ReviewConfig {
     const content = fs.readFileSync(configPath, "utf-8");
     const result: Record<string, unknown> = {};
     for (const line of content.split("\n")) {
-      const m = line.match(/^\s*([\w][\w.]*):\s*(.+)$/);
+      const m = line.match(/^\s*([\w][\w.*\/-]+):\s*(.+)$/);
       if (m) {
         let val = m[2].trim();
         if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) val = val.slice(1, -1);
