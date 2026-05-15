@@ -1,7 +1,7 @@
 # Review Gate for Pi
 
-[![npm version](https://img.shields.io/npm/v/pi-review-gate)](https://www.npmjs.com/package/pi-review-gate)
-[![license](https://img.shields.io/npm/l/pi-review-gate)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/@bytesbrains/pi-review-gate)](https://www.npmjs.com/package/@bytesbrains/pi-review-gate)
+[![license](https://img.shields.io/npm/l/@bytesbrains/pi-review-gate)](./LICENSE)
 
 > CI-level merge guardian for AI agents — required reviewers, breaking change detection, stale PR cleanup, and review automation. **Agents don't `git merge` — CI merges only after all gates pass.**
 
@@ -15,7 +15,7 @@ Core enforcement runs in Gitea Actions — agents **cannot bypass** these gates.
 ## Install
 
 ```bash
-pi install npm:pi-review-gate
+pi install npm:@bytesbrains/pi-review-gate
 ```
 
 ## Tools
@@ -76,7 +76,7 @@ breakingChangePatterns: export interface,export type,export function,export clas
 ## Workflow
 
 ```
-contrib_submit() from pi-contrib-gate
+contrib_submit() from @bytesbrains/pi-contrib-gate
   │
   ▼
 PR opened on Gitea
@@ -120,12 +120,12 @@ Every CI run diffs against the base branch and scans for:
 
 If detected, CI adds a `⚠️ breaking-change` label and requires human review.
 
-## Integration with pi-contrib-gate
+## Integration with @bytesbrains/pi-contrib-gate
 
 The two gates work together:
 
 ```
-pi-contrib-gate          pi-review-gate
+pi-contrib-gate          @bytesbrains/pi-review-gate
      │                        │
      │  contrib_start_work    │
      │  contrib_propose       │
@@ -141,8 +141,8 @@ pi-contrib-gate          pi-review-gate
 Install both for full agent governance:
 
 ```bash
-pi install npm:pi-contrib-gate
-pi install npm:pi-review-gate
+pi install npm:@bytesbrains/pi-contrib-gate
+pi install npm:@bytesbrains/pi-review-gate
 ```
 
 ## License
