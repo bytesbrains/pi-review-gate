@@ -37,10 +37,12 @@ export function loadConfig(cwd: string): ReviewConfig {
         reviewers[key.replace("requiredReviewers.", "")] = (val as string).split(",").map(s => s.trim()).filter(Boolean);
       }
     }
+    const minDiverseReviews = parseInt(result["minDiverseReviews"] as string);
+    const staleDays = parseInt(result["staleDays"] as string);
     return {
-      minDiverseReviews: parseInt(result["minDiverseReviews"] as string) || DEFAULT_CONFIG.minDiverseReviews,
+      minDiverseReviews: isNaN(minDiverseReviews) ? DEFAULT_CONFIG.minDiverseReviews : minDiverseReviews,
       requiredReviewers: reviewers,
-      staleDays: parseInt(result["staleDays"] as string) || DEFAULT_CONFIG.staleDays,
+      staleDays: isNaN(staleDays) ? DEFAULT_CONFIG.staleDays : staleDays,
       protectedPaths: (result["protectedPaths"] as string)?.split(",").map(s => s.trim()).filter(Boolean) || DEFAULT_CONFIG.protectedPaths,
       breakingChangePatterns: (result["breakingChangePatterns"] as string)?.split(",").map(s => s.trim()).filter(Boolean) || DEFAULT_CONFIG.breakingChangePatterns,
     };
