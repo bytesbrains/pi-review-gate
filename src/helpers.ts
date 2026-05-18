@@ -39,7 +39,7 @@ export async function giteaApi(path: string, method: string, body: Record<string
     });
     const text = await res.text();
     const statusCode = res.status;
-    if (!res.ok) return { ok: false, data: null, statusCode, error: text || `HTTP ${statusCode}` };
+    if (!res.ok) return { ok: false, data: null, statusCode, error: `Gitea API error: HTTP ${statusCode} ${method} ${path}` };
     try { return { ok: true, data: JSON.parse(text), statusCode }; } catch { return { ok: true, data: text, statusCode }; }
   } catch (e: any) {
     return { ok: false, data: null, error: e.message || "Network error" };
